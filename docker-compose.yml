@@ -8,7 +8,14 @@ services:
     ports:
       - '8000:8000'
       - '1389:1389'
-    entrypoint: [ "java", "-cp", "/log4shell.jar", "com.huntresslabs.log4shell.App", "--hostname", "my-log4shell-tester.something.com", "--http-host", "0.0.0.0", "--http-port", "8000", "--ldap-host", "0.0.0.0", "--ldap-port", "1389", "--redis-url", "redis://redis:6379" ]
+    entrypoint: [ "java", "-cp", "/log4shell.jar",
+      "com.huntresslabs.log4shell.App",
+      "--hostname", "my-log4shell-tester.something.com",
+      "--http-host", "0.0.0.0",
+      "--http-port", "8000",
+      "--ldap-host", "0.0.0.0",
+      "--ldap-port", "1389",
+      "--redis-url", "redis://redis:6379" ]
 
   redis:
     image: redis
